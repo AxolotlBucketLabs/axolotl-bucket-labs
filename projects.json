@@ -314,6 +314,25 @@
       ]
     },
     {
+      "id": "simpleeconomy",
+      "repository": "AxolotlBucketLabs/SimpleEconomy",
+      "url": "https://github.com/AxolotlBucketLabs/SimpleEconomy",
+      "type": "plugin",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
+    },
+    {
       "id": "simplepackethandler",
       "repository": "AxolotlBucketLabs/SimplePacketHandler",
       "url": "https://github.com/AxolotlBucketLabs/SimplePacketHandler",
