@@ -1,29 +1,37 @@
 # Repository instructions
 
-These instructions apply only to the `axolotl-pm-skill` repository. Read them together with `SKILL.md` when maintaining this skill. They do not replace system instructions, user instructions, or the instructions of a target plugin repository.
+These instructions apply to the unified AxolotlBucketLabs skill and organization records.
 
-## Keep the skill self-consistent
+## Keep one project
 
-- Treat `SKILL.md` as the entrypoint and references as routed supporting guidance.
-- Keep one canonical rule in one place. Link to it instead of copying a second version into another reference.
-- Review all human-facing Markdown files after a policy change. Do not review only the lines changed by the current diff.
-- Keep examples, validator behavior, README structure, and repository instructions consistent.
-- Keep research-only names and links out of canonical documentation unless the deliverable explicitly requires them.
+- Keep one root `SKILL.md` as the only skill entry point.
+- Do not recreate the archived repositories as nested projects, skills, or submodules.
+- Keep topic-specific instructions in the existing references and keep organization records in the root JSON files.
+- Keep one canonical source for each policy. Link to it instead of copying another version.
+- Do not add a document, helper, dependency, example, or workflow without a current consumer.
+
+## Preserve scope
+
+- Apply organization permissions, identity, and roles only to repositories owned by AxolotlBucketLabs.
+- Keep the Axolotl-PM and PocketMine-MP technical guidance usable for relevant repositories outside the organization.
+- Treat PocketMine-MP core conventions as conditional guidance. Do not apply core-only patterns to ordinary plugins or libraries.
+- Keep the JSON registries separate from live GitHub state. Verify live settings before reporting that a policy is active.
+- Do not change external repository settings, permissions, rulesets, releases, or archive state unless the user requests that action.
 
 ## Prose and Markdown
 
-- Write standalone bullet items as complete sentences that begin with an uppercase letter and end with a period.
-- Avoid semicolons in ordinary prose. Use a period, comma, or a new sentence instead.
-- Do not use em dash or en dash characters as sentence punctuation. Use an ASCII hyphen only when a dash is necessary.
+- Write standalone bullets as complete sentences that begin with an uppercase letter and end with a period.
+- Avoid semicolons in ordinary prose.
+- Do not use em dash or en dash characters as sentence punctuation. Use an ASCII hyphen only when a dash is needed.
 - Use straight double quotes in authored prose.
-- Keep code, regex, URLs, legal text, direct quotations, and literal syntax unchanged when the exception is required.
-- Use inline code for literal technical terms and fenced code blocks for multiline code, configuration, commands, logs, patches, and output.
-- Check both raw Markdown and its rendered structure when a Markdown change affects a user-facing document.
+- Use inline code for technical literals and fenced blocks for multiline code, commands, configuration, JSON, or logs.
+- Keep comments focused on intent, invariants, compatibility, security, or a non-obvious reason.
+- Do not add dates that only record when an agent edited a file.
 
-## Required checks
+## Validation
 
-- Run `python scripts/validate_skill.py` after editing the skill.
+- Run `python scripts/validate_project.py` after changing project content.
 - Run `python -m unittest discover --start-directory tests --pattern "test_*.py"` after changing validator behavior or its tests.
 - Run the official Codex skill validator before publishing a revision.
-- Review the final diff and search every prose file for forbidden punctuation, lowercase checklist fragments, label-shaped prose, prompt context, and unsupported claims.
-- Report local checks, hosted CI, published releases, and external settings as separate evidence.
+- Review the final diff, internal links, JSON registry, ruleset exports, issue forms, and required status check together.
+- Verify the remote repository, branch, metadata, team access, live ruleset, and hosted validation workflow separately after publishing.

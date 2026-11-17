@@ -1,85 +1,29 @@
-# Axolotl-PM Skill
+# AxolotlBucketLabs
 
-[![CI](https://github.com/AxolotlBucketLabs/axolotl-pm-skill/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/AxolotlBucketLabs/axolotl-pm-skill/actions/workflows/validate.yml) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Discord](https://img.shields.io/discord/1568295845374206052?label=discord&logo=discord&color=5865F2)](https://discord.gg/Pk4FrNvHnM)
+[![CI](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs/actions/workflows/validate.yml) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Discord](https://img.shields.io/discord/1568295845374206052?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/Pk4FrNvHnM)
 
-Axolotl-PM Skill helps Codex develop, review, document, test, and package Axolotl-PM or PocketMine-MP plugins, virions, and reusable PHP libraries.
+This repository is the shared source for AxolotlBucketLabs development guidance, community policy, project assignments, and GitHub ruleset exports. It contains one Codex skill with technical guidance for Axolotl-PM and PocketMine-MP work. Organization policy applies only to repositories owned by AxolotlBucketLabs.
 
-It keeps the repository's own conventions as the primary source of truth, then applies Axolotl-PM and PocketMine-MP practices where they are relevant. The skill is designed for the full project lifecycle, from discovery and implementation through quality checks, DevTools packaging, documentation, and release review.
+## Use the skill
 
-## What it covers
+Install this repository as the `axolotl-bucket-labs` Codex skill. For manual installation, place the repository folder at `~/.codex/skills/axolotl-bucket-labs`.
 
-- Plugin lifecycle, commands, permissions, events, resources, configuration, and localization.
-- Virion and reusable-library boundaries, public APIs, Composer packaging, shading, and consumer integration.
-- PHP style, naming, static analysis, YAML validation, security, performance, and reproducible builds.
-- AxolotlBucketLabs DevTools workflows for folder loading, shared virions, PHAR packaging, extraction, and CI.
-- README, badge, license, compatibility, changelog, and release guidance.
-- Repository identity, commit messages, version mapping, release notes, README scope, date hygiene, and CI freshness.
-- Human-facing writing rules for natural README, changelog, release note, comment, issue, runtime message, and diagnostic prose.
-- GitHub Flavored Markdown structure for inline code, fenced code, tables, alerts, links, and collapsed details.
-- Maintainer posture that keeps changes focused, evidence-based, proportional, and aligned with the project's direction.
-- GitHub repository metadata, homepage and topic setup, discoverability checks, and UI-only feature settings.
-- Official Axolotl-PM documentation, source, community, PHP runtime, API version, and Bedrock protocol references.
-- Conditional use of related skills such as Find Skills, Humanizer, and Graphify when the task benefits from them.
+The skill covers plugins, virions, reusable PHP libraries, PocketMine-MP core changes, documentation, testing, packaging, and organization maintenance. It selects the relevant guidance based on the target repository and change.
 
-## Layout
+## Organization records
 
-```text
-axolotl-pm-skill/
-├── .github/
-│   ├── dependabot.yml
-│   └── workflows/
-│       └── validate.yml
-├── AGENTS.md
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-├── references/
-│   ├── devtools-workflow.md
-│   ├── official-sources.md
-│   ├── plugin-workflow.md
-│   ├── project-discovery.md
-│   ├── public-release-review.md
-│   ├── quality-and-security-rules.md
-│   ├── readme-release.md
-│   ├── repository-lifecycle.md
-│   ├── repository-publishing.md
-│   ├── style-and-naming.md
-│   ├── virion-workflow.md
-│   └── writing-style.md
-├── scripts/
-│   └── validate_skill.py
-└── tests/
-    └── test_validate_skill.py
-```
+`roles.json`, `members.json`, and `projects.json` contain the declared organization records. `PERMISSIONS.md` and `PROJECTS.md` explain the role and project policies. A declared permission does not confirm that the live GitHub setting has been applied.
 
-## Installation
+Eligible role applications can be opened through the [role application form](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs/issues/new?template=role-application.yml). Applications are public. Use the [Discord server](https://discord.gg/Pk4FrNvHnM) for private questions.
 
-Install this repository as a Codex skill using the Codex skill installer, with `AxolotlBucketLabs/axolotl-pm-skill` as the GitHub source. For a manual installation, place the repository folder at:
+## Ruleset exports
 
-```text
-~/.codex/skills/axolotl-pm-skill
-```
+The versioned `main-baseline` exports are stored in `.github/rulesets/main-baseline/`. They document repository settings and do not apply themselves. Verify the live GitHub ruleset after importing an export.
 
-Keep the folder name and the `name` value in `SKILL.md` aligned so automatic skill discovery can identify it consistently.
+## Contributing
 
-## Development
-
-Run the repository validator after editing the skill:
-
-```sh
-python scripts/validate_skill.py
-```
-
-The official Codex `skill-creator` validator should also be run before publishing a new revision. The local validator checks the frontmatter, skill name, required UI metadata, linked references, scaffold placeholders, Markdown fence boundaries, prose punctuation, checklist bullets, research-only context leaks, workflow action pins, and GitHub Actions Dependabot configuration without requiring third-party packages.
-
-Run the validator regression tests with:
-
-```sh
-python -m unittest discover --start-directory tests --pattern "test_*.py"
-```
-
-When changing a reference, update the routing link in `SKILL.md` if its activation condition changes. Keep detailed, mode-specific instructions in references rather than expanding the entrypoint with duplicated material.
+Use a pull request for changes to the skill, organization records, issue forms, or ruleset exports. Keep the change focused and include the evidence needed to review it.
 
 ## License
 
-This project is released under the MIT License.
+This repository is available under the [MIT License](LICENSE).

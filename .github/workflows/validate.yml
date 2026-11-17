@@ -1,4 +1,4 @@
-name: Validate skill
+name: Validate project
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   validate:
-    name: Validate skill structure
+    name: Validate AxolotlBucketLabs project
     runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
@@ -22,8 +22,12 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Run skill validator
-        run: python scripts/validate_skill.py
+      - name: Validate YAML files
+        run: >-
+          ruby -e 'require "yaml"; Dir.glob(".github/**/*.{yml,yaml}").each { |path| YAML.load_file(path, aliases: true) }'
+
+      - name: Validate skill, registries, and rulesets
+        run: python scripts/validate_project.py
 
       - name: Run validator regression tests
         run: python -m unittest discover --start-directory tests --pattern "test_*.py"

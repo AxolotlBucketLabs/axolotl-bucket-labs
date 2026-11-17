@@ -4,13 +4,14 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
 
 
-SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "validate_skill.py"
-SPEC = importlib.util.spec_from_file_location("validate_skill", SCRIPT_PATH)
+SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "validate_project.py"
+SPEC = importlib.util.spec_from_file_location("validate_project", SCRIPT_PATH)
 if SPEC is None or SPEC.loader is None:
     raise RuntimeError(f"Unable to load {SCRIPT_PATH}")
 VALIDATOR = importlib.util.module_from_spec(SPEC)
@@ -155,6 +156,97 @@ class MarkdownPolicyTests(unittest.TestCase):
 
             with self.assertRaisesRegex(SystemExit, "research-only context"):
                 VALIDATOR.validate_context_boundaries(root)
+
+
+class ProjectDataTests(unittest.TestCase):
+    def write_registries(self, root: Path, role: str = "lab-founder") -> None:
+        (root / "roles.json").write_text(
+            json.dumps({"roles": [{"id": "lab-founder"}]}),
+            encoding="utf-8",
+        )
+        (root / "members.json").write_text(
+            json.dumps({"members": [{"github": "https://github.com/NhanAZ", "roles": ["lab-founder"]}]}),
+            encoding="utf-8",
+        )
+        (root / "projects.json").write_text(
+            json.dumps(
+                {
+                    "projects": [
+                        {
+                            "id": "axolotl-bucket-labs",
+                            "repository": "AxolotlBucketLabs/axolotl-bucket-labs",
+                            "status": "active",
+                            "assignments": [
+                                {
+                                    "member": "NhanAZ",
+                                    "role": role,
+                                    "repositoryPermission": "admin",
+                                }
+                            ],
+                        }
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
+        (root / "PROJECTS.md").write_text(
+            "The organization currently has 1 active repositories in the registry.\n",
+            encoding="utf-8",
+        )
+
+    def test_valid_registries_are_accepted(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_registries(root)
+
+            repositories = VALIDATOR.validate_registries(root)
+
+            self.assertEqual(repositories, {"axolotl-bucket-labs"})
+
+    def test_unknown_project_role_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_registries(root, role="missing-role")
+
+            with self.assertRaisesRegex(SystemExit, "unknown role"):
+                VALIDATOR.validate_registries(root)
+
+    def test_ruleset_must_match_registry_and_status_check(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            ruleset_dir = root / ".github" / "rulesets" / "main-baseline"
+            ruleset_dir.mkdir(parents=True)
+            ruleset = {
+                "name": "main-baseline",
+                "target": "branch",
+                "enforcement": "active",
+                "conditions": {"ref_name": {"include": ["refs/heads/main"]}},
+                "rules": [
+                    {
+                        "type": "required_status_checks",
+                        "parameters": {
+                            "required_status_checks": [
+                                {"context": VALIDATOR.EXPECTED_STATUS_CHECK}
+                            ]
+                        },
+                    }
+                ],
+                "bypass_actors": [],
+            }
+            (ruleset_dir / "axolotl-bucket-labs.json").write_text(
+                json.dumps(ruleset),
+                encoding="utf-8",
+            )
+
+            VALIDATOR.validate_rulesets(root, {"axolotl-bucket-labs"})
+
+            ruleset["rules"][0]["parameters"]["required_status_checks"][0]["context"] = "wrong check"
+            (ruleset_dir / "axolotl-bucket-labs.json").write_text(
+                json.dumps(ruleset),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(SystemExit, "must require"):
+                VALIDATOR.validate_rulesets(root, {"axolotl-bucket-labs"})
 
 
 if __name__ == "__main__":

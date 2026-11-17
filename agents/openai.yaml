@@ -1,3 +1,4 @@
 interface:
-  display_name: "Axolotl-PM Skill"
-  short_description: "Build, review, and ship Axolotl-PM plugins and libraries"
+  display_name: "AxolotlBucketLabs"
+  short_description: "Develop Axolotl-PM projects and maintain org policy"
+  default_prompt: "Use $axolotl-bucket-labs for Axolotl-PM development or AxolotlBucketLabs repository maintenance."
