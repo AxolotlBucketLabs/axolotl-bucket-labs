@@ -33,6 +33,25 @@ Read only the references needed for the current task.
 - Read [organization-policy.md](references/organization-policy.md) for organization roles, access, registry files, and ruleset policy.
 - Read [organization-audit.md](references/organization-audit.md) for an organization-wide repository audit.
 
+## Keep this guidance discoverable
+
+- At the start of a substantive write task in an Axolotl-PM or PocketMine-MP project, inspect the repository's root and applicable `AGENTS.md` files.
+- If the repository is being created, adopted, or maintained by the user and its root `AGENTS.md` does not point to this skill, add a short section to that file. Create a concise root `AGENTS.md` if none exists.
+- Link the current unified skill and its writing style reference. Tell future agents to read the style reference before writing human-facing prose, and repeat the core prose rules in `AGENTS.md` so they remain visible even if the reference is unavailable. Update stale links to the archived `axolotl-pm-skill` repository instead of keeping both links.
+- Keep the section limited to guidance that fits the target project. Do not add AxolotlBucketLabs roles, branding, permissions, or governance to external repositories.
+- Do not change upstream contributor instructions solely to add this pointer for a one-off external contribution. Do not create `AGENTS.md` during read-only reviews or unrelated, trivial edits.
+- Skip this bootstrap when editing the unified skill repository itself. Its root instructions already govern skill maintenance.
+
+Use this short section when adding the guidance:
+
+```markdown
+## Axolotl-PM agent guidance
+
+Use the [AxolotlBucketLabs skill](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs/blob/main/SKILL.md) for Axolotl-PM and PocketMine-MP plugin, virion, and PHP library work. Read its [writing style](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs/blob/main/references/writing-style.md) before writing human-facing prose.
+
+Write natural, complete sentences. Do not use em dash or en dash punctuation or semicolons in prose. Avoid unnecessary `Label: content` phrasing. Use Markdown inline code for technical names and paths.
+```
+
 ## Keep changes grounded
 
 - Research before editing. Inspect similar code, callers, consumers, dependencies, tests, invariants, and compatibility boundaries.
