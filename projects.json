@@ -162,6 +162,25 @@
       ]
     },
     {
+      "id": "economy-provider-api",
+      "repository": "AxolotlBucketLabs/EconomyProviderAPI",
+      "url": "https://github.com/AxolotlBucketLabs/EconomyProviderAPI",
+      "type": "virion",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
+    },
+    {
       "id": "formapi",
       "repository": "AxolotlBucketLabs/FormAPI",
       "url": "https://github.com/AxolotlBucketLabs/FormAPI",
