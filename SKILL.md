@@ -9,7 +9,8 @@ Use this skill for technical work on Axolotl-PM and PocketMine-MP projects, plus
 
 ## Determine the target
 
-- Check the Git remote owner or live GitHub repository owner before applying organization policy.
+- Before applying organization policy or deciding whether to add an `AGENTS.md` pointer, verify the intended push target's owner from its Git remote and confirm it on GitHub when needed. Treat a fork under another account as an external repository, even when its upstream belongs to AxolotlBucketLabs.
+- If no push target is configured or the owner is unclear, resolve the target before adding organization guidance. Do not infer ownership from the local folder, access rights, or the task request.
 - For repositories outside AxolotlBucketLabs, use only the technical guidance relevant to the requested Axolotl-PM or PocketMine-MP work. Do not copy organization roles, permissions, Discord links, badges, or repository policy into an external project.
 - Treat the current repository's instructions, source, dependencies, tests, and workflow as authoritative. Use Axolotl-PM and PocketMine-MP guidance where it fits the target.
 - Identify a plugin by its `plugin.yml`, `PluginBase` entry point, commands, listeners, resources, or server lifecycle behavior.
@@ -36,9 +37,10 @@ Read only the references needed for the current task.
 ## Keep this guidance discoverable
 
 - At the start of a substantive write task in an Axolotl-PM or PocketMine-MP project, inspect the repository's root and applicable `AGENTS.md` files.
-- If the repository is being created, adopted, or maintained by the user and its root `AGENTS.md` does not point to this skill, add a short section to that file. Create a concise root `AGENTS.md` if none exists.
+- Before creating or changing a root `AGENTS.md`, verify the owner of the intended push target as described in [Determine the target](#determine-the-target).
+- If the target repository is owned by AxolotlBucketLabs, make sure its root `AGENTS.md` points to this skill and its writing style reference. Add a concise section if the file exists without the pointer, or create a short root file when it is missing.
+- If the target is outside AxolotlBucketLabs, do not add this organization's skill pointer or create an `AGENTS.md` for a one-off contribution, code update, fork, or access. Add project-specific agent guidance only when the user explicitly asks for it and the repository's ownership and contribution rules allow the change.
 - Link the current unified skill and its writing style reference. Tell future agents to read the style reference before writing human-facing prose, and repeat the core prose rules in `AGENTS.md` so they remain visible even if the reference is unavailable. Update stale links to the archived `axolotl-pm-skill` repository instead of keeping both links.
-- Keep the section limited to guidance that fits the target project. Do not add AxolotlBucketLabs roles, branding, permissions, or governance to external repositories.
 - Do not change upstream contributor instructions solely to add this pointer for a one-off external contribution. Do not create `AGENTS.md` during read-only reviews or unrelated, trivial edits.
 - Skip this bootstrap when editing the unified skill repository itself. Its root instructions already govern skill maintenance.
 
