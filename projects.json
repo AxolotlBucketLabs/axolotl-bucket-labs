@@ -371,6 +371,25 @@
       ]
     },
     {
+      "id": "simplesql",
+      "repository": "AxolotlBucketLabs/SimpleSQL",
+      "url": "https://github.com/AxolotlBucketLabs/SimpleSQL",
+      "type": "virion",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
+    },
+    {
       "id": "ui-api",
       "repository": "AxolotlBucketLabs/UI-API",
       "url": "https://github.com/AxolotlBucketLabs/UI-API",
