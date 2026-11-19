@@ -150,6 +150,12 @@ Do not add `Last updated` unless the document has a real maintenance reason and 
 
 Do not change copyright years, generated headers, or historical dates unless the task requires that exact change and the source of truth is known.
 
+## Issue and pull request creation
+
+Treat creating an issue or pull request as a public GitHub change. Do not infer permission to create one from a request to investigate, fix, audit, prepare, or release. Complete the requested local work and checks first. Then show the target repository, exact title, final body, and, for a pull request, the head and base branches. Wait for the user's explicit confirmation before creating it.
+
+For a batch, prepare the complete set before asking. Show every target repository, issue or pull request title, final text, and relevant branch. Do not create any item until the user confirms the full set. One confirmation can authorize the unchanged batch. If a target or draft changes after confirmation, ask again for the affected item.
+
 ## Workflow freshness and action pins
 
 Before creating or changing a workflow:
