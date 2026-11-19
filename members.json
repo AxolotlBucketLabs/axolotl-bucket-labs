@@ -27,7 +27,8 @@
       "discord": "pupggers",
       "github": "https://github.com/pupggers",
       "roles": [
-        "lab-member"
+        "lab-member",
+        "lab-maintainer"
       ]
     }
   ]
