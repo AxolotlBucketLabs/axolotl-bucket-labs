@@ -45,7 +45,7 @@ The permission names follow GitHub repository roles. A repository administrator 
 
 ## Current project registry
 
-The organization currently has 19 active repositories in the registry.
+The organization currently has 20 active repositories in the registry.
 
 | Project | Type | Declared managers |
 | --- | --- | --- |
@@ -54,6 +54,7 @@ The organization currently has 19 active repositories in the registry.
 | [`arithmexp`](https://github.com/AxolotlBucketLabs/arithmexp) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`await-generator`](https://github.com/AxolotlBucketLabs/await-generator) | Library | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`axolotl-bucket-labs`](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs) | Organization Platform | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`CustomAlerts`](https://github.com/AxolotlBucketLabs/CustomAlerts) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`DevTools`](https://github.com/AxolotlBucketLabs/DevTools) | Tool | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`EconomyProviderAPI`](https://github.com/AxolotlBucketLabs/EconomyProviderAPI) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`FormAPI`](https://github.com/AxolotlBucketLabs/FormAPI) | Library | NhanAZ with `Admin`, jeantkg with `Maintain` |

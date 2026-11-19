@@ -143,6 +143,25 @@
       ]
     },
     {
+      "id": "customalerts",
+      "repository": "AxolotlBucketLabs/CustomAlerts",
+      "url": "https://github.com/AxolotlBucketLabs/CustomAlerts",
+      "type": "plugin",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
+    },
+    {
       "id": "devtools",
       "repository": "AxolotlBucketLabs/DevTools",
       "url": "https://github.com/AxolotlBucketLabs/DevTools",
