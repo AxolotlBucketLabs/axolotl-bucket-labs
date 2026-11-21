@@ -243,6 +243,25 @@
       ]
     },
     {
+      "id": "libpmform",
+      "repository": "AxolotlBucketLabs/libpmform",
+      "url": "https://github.com/AxolotlBucketLabs/libpmform",
+      "type": "virion",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
+    },
+    {
       "id": "multiworld",
       "repository": "AxolotlBucketLabs/MultiWorld",
       "url": "https://github.com/AxolotlBucketLabs/MultiWorld",
