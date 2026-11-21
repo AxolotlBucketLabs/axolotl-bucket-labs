@@ -243,6 +243,25 @@
       ]
     },
     {
+      "id": "multiworld",
+      "repository": "AxolotlBucketLabs/MultiWorld",
+      "url": "https://github.com/AxolotlBucketLabs/MultiWorld",
+      "type": "plugin",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
+    },
+    {
       "id": "npc",
       "repository": "AxolotlBucketLabs/NPC",
       "url": "https://github.com/AxolotlBucketLabs/NPC",
