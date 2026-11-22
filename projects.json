@@ -488,6 +488,25 @@
           "repositoryPermission": "maintain"
         }
       ]
+    },
+    {
+      "id": "commando",
+      "repository": "AxolotlBucketLabs/Commando",
+      "url": "https://github.com/AxolotlBucketLabs/Commando",
+      "type": "virion",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
     }
   ]
 }
