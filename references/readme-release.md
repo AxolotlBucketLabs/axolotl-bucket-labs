@@ -88,6 +88,7 @@ Use a candidate-first release process when the project publishes versioned artif
 - Promote the verified commit and artifact. Do not rebuild different bytes after verification and call them the same release. If a rebuild is necessary, verify it as a new candidate.
 - Create a release, tag, download badge, or latest-release claim only after the corresponding GitHub state and artifact actually exist.
 - Keep release notes focused on user-visible behavior, compatibility, migrations, and important fixes. Do not describe a release as stable when only a local build or an unverified CI job exists.
+- Link every source or dependency commit mentioned in release notes to its GitHub commit page. Use a short SHA as the link text and the full SHA in the URL, such as ``Built from [`abc1234`](https://github.com/OWNER/REPO/commit/FULL_SHA).`` Verify that the commit resolves in the correct repository before publishing. If it is not publicly addressable, omit the raw SHA and link to the relevant repository or CI run instead. Keep artifact SHA-256 checksums as verification data.
 
 ## Completion checklist
 
