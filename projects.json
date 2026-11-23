@@ -507,6 +507,25 @@
           "repositoryPermission": "maintain"
         }
       ]
+    },
+    {
+      "id": "resourcepackmanager",
+      "repository": "AxolotlBucketLabs/ResourcePackManager",
+      "url": "https://github.com/AxolotlBucketLabs/ResourcePackManager",
+      "type": "virion",
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        },
+        {
+          "member": "jeantkg",
+          "role": "lab-associate",
+          "repositoryPermission": "maintain"
+        }
+      ]
     }
   ]
 }
