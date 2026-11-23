@@ -1,6 +1,6 @@
 # README, compatibility, and release workflow
 
-## README shape by artifact
+## README shape by role and integration
 
 For a plugin, prefer a concise operator-focused README:
 
@@ -14,12 +14,13 @@ integrations and compatibility
 license
 ```
 
-For a virion/library, prefer an API-focused README:
+For a library, prefer an API-focused README and document each supported integration separately:
 
 ```text
-identity and non-standalone warning
+identity and whether it is independently installable
 requirements
-installation in a consumer build
+Composer installation, if supported
+Virion installation in a consumer build, if supported
 quick-start code example
 public API examples
 lifecycle and cleanup
@@ -28,6 +29,8 @@ license and asset notes
 ```
 
 Use code examples that match the current method signatures. A short README is acceptable for a small plugin. A reusable library should usually include at least one complete consumer example.
+
+Do not combine Composer, Virion, and plugin installation into one generic instruction. Explain what each supported mode provides. A project with a library role and standalone plugin role needs separate steps for using the library and installing the plugin.
 
 ## README Markdown structure
 

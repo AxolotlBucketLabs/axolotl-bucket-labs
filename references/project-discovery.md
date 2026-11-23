@@ -1,6 +1,6 @@
 # Project discovery and compatibility
 
-Use this reference before changing an unfamiliar plugin, virion, or library.
+Use this reference before changing an unfamiliar project. Read [project-model.md](project-model.md) for the distinction between project roles and integration modes.
 
 ## Convention precedence
 
@@ -26,22 +26,11 @@ Use `rg --files` and targeted `rg` searches. Inspect:
 - Inspect `README*`, `LICENSE`, `resources/`, `tests/`, `examples/`, and `docs/`.
 - Inspect representative classes in `src/`, especially the entry point and one class from each major subsystem.
 
-## Classify the artifact
+## Classify the project
 
-Signals for a plugin:
+Determine its roles separately from its supported integration modes. A reusable API can be a library role delivered through Composer, Virion, or both. A standalone plugin is a plugin role. A repository can have both roles, with separate manifests and separately verified outputs.
 
-- Find `plugin.yml` and a `PluginBase` subclass.
-- Find `onEnable()`, `onDisable()`, command registration, event listeners, and scheduled tasks.
-- Check server-facing resources, configuration, permissions, and commands.
-
-Signals for a virion/library:
-
-- Find `virion.yml` and an `antigen` namespace.
-- Expose a public service, value object, parser, adapter, or provider API.
-- Use consumer-side shading or injection rather than direct installation in `plugins/`.
-- Find Composer metadata or a separate example consumer.
-
-When both appear, identify which code is the reusable core and which code is the server/plugin adapter. Do not move server lifecycle assumptions into the reusable core without a concrete reason.
+Inspect `composer.json`, `virion.yml`, `plugin.yml`, README installation instructions, consumer examples, CI workflows, and release assets. A manifest or Composer package type is evidence to investigate, not proof that a consumer mode is documented or supported. Record only the modes the repository maintains. Keep reusable code separate from plugin lifecycle wiring when both roles are present.
 
 ## Establish the real target
 
@@ -51,7 +40,8 @@ Write down the facts that matter to implementation:
 - Record the Axolotl-PM or PocketMine package and exact locked revision.
 - Record the API version floor and any upper bound.
 - Record the DevTools or VirionTools revision.
-- Record supported build modes such as a folder plugin, local virion, Composer consumer, or standalone PHAR.
+- Record supported modes such as Composer consumption, shared virion loading, standalone plugin installation, CLI use, or GitHub Actions integration.
+- Check that CI validates each mode the README promises. A source folder, Composer package, plugin PHAR, and virion PHAR are different inputs or outputs.
 - Record available test and static analysis commands.
 
 If the repository claims a broad compatibility range but only pins one development revision, preserve that distinction in the README and final report.

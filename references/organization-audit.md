@@ -7,7 +7,7 @@ Use this reference when auditing or changing an AxolotlBucketLabs repository, re
 1. Read the current local instructions and working tree status.
 2. Read the Git remote and confirm the owner is `AxolotlBucketLabs`.
 3. Read the live repository metadata, default branch, visibility, license, homepage, topics, and archive state.
-4. Read the root `projects.json`, `members.json`, and `roles.json` records when the task depends on organization policy. Read the target repository's README, workflows, manifest, and release files.
+4. Read the root `projects.json`, `members.json`, and `roles.json` records when the task depends on organization policy. Read the target repository's README, Composer metadata, plugin and virion manifests, workflows, and release files. Compare declared project roles and supported integration modes with those sources. Do not infer a library role from a Composer package type or manifest alone.
 
 ## Check repository state
 

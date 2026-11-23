@@ -4,7 +4,7 @@ This document explains how AxolotlBucketLabs records project responsibility and 
 
 ## How the registry works
 
-`projects.json` records the declared organization policy for each repository. It identifies the project type, current status, assigned members, role IDs, and intended GitHub repository permission.
+`projects.json` records declared organization policy for each repository. It identifies project roles, supported integration modes, current status, assigned members, role IDs, and intended GitHub repository permission.
 
 The registry is a policy document. It does not prove that GitHub has already applied every permission. After an assignment changes, an organization owner must verify the live GitHub repository access separately.
 
@@ -43,41 +43,49 @@ Every member reference must match a GitHub username in [`members.json`](members.
 
 The permission names follow GitHub repository roles. A repository administrator must review sensitive permissions, including Actions secrets, workflow access, protected branches, and repository settings, before assigning a role.
 
+## Project roles and integration modes
+
+`roles` describes what a project is responsible for. `integrationModes` describes how users or other projects consume it. A repository can have multiple values in either list. See the canonical [project model](references/project-model.md) for definitions and classification rules.
+
+`library` is a reusable-code role. `virion` is a PocketMine-family integration mode for that code. `composer` is a PHP dependency and autoloading mode. `plugin` is an independently useful server installation. A plugin API does not automatically make the plugin a library, and Composer development metadata does not automatically make Composer a supported consumer mode.
+
+These declarations record supported user-facing behavior. They do not list every file or prove every build output is currently produced. Compare the README, manifests, workflows, and releases when auditing a repository.
+
 ## Current project registry
 
 The organization currently has 25 active repositories in the registry.
 
-| Project | Type | Declared managers |
-| --- | --- | --- |
-| [`.github`](https://github.com/AxolotlBucketLabs/.github) | Organization Config | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`action-shellcheck`](https://github.com/AxolotlBucketLabs/action-shellcheck) | Tool | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`arithmexp`](https://github.com/AxolotlBucketLabs/arithmexp) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`await-generator`](https://github.com/AxolotlBucketLabs/await-generator) | Library | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`axolotl-bucket-labs`](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs) | Organization Platform | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`Commando`](https://github.com/AxolotlBucketLabs/Commando) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`CustomAlerts`](https://github.com/AxolotlBucketLabs/CustomAlerts) | Plugin | NhanAZ with `Admin`, jeantkg and pupggers with `Maintain` |
-| [`DevTools`](https://github.com/AxolotlBucketLabs/DevTools) | Tool | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`EconomyProviderAPI`](https://github.com/AxolotlBucketLabs/EconomyProviderAPI) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`FormAPI`](https://github.com/AxolotlBucketLabs/FormAPI) | Library | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`FormImagesFix`](https://github.com/AxolotlBucketLabs/FormImagesFix) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`libpmform`](https://github.com/AxolotlBucketLabs/libpmform) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`MultiWorld`](https://github.com/AxolotlBucketLabs/MultiWorld) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`NPC`](https://github.com/AxolotlBucketLabs/NPC) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`PersonaSkin`](https://github.com/AxolotlBucketLabs/PersonaSkin) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`pmforms`](https://github.com/AxolotlBucketLabs/pmforms) | Library | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`PureChat`](https://github.com/AxolotlBucketLabs/PureChat) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`PurePerms`](https://github.com/AxolotlBucketLabs/PurePerms) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`ResourcePackManager`](https://github.com/AxolotlBucketLabs/ResourcePackManager) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`ScoreHud`](https://github.com/AxolotlBucketLabs/ScoreHud) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`SimpleEconomy`](https://github.com/AxolotlBucketLabs/SimpleEconomy) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`SimplePacketHandler`](https://github.com/AxolotlBucketLabs/SimplePacketHandler) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`SimpleSQL`](https://github.com/AxolotlBucketLabs/SimpleSQL) | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`UI-API`](https://github.com/AxolotlBucketLabs/UI-API) | Library | NhanAZ with `Admin`, jeantkg with `Maintain` |
-| [`VanillaGenerator`](https://github.com/AxolotlBucketLabs/VanillaGenerator) | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| Project | Roles | Integration modes | Declared managers |
+| --- | --- | --- | --- |
+| [`.github`](https://github.com/AxolotlBucketLabs/.github) | Organization config | None | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`action-shellcheck`](https://github.com/AxolotlBucketLabs/action-shellcheck) | Tool | GitHub Action | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`arithmexp`](https://github.com/AxolotlBucketLabs/arithmexp) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`await-generator`](https://github.com/AxolotlBucketLabs/await-generator) | Library | Composer, Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`axolotl-bucket-labs`](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs) | Organization platform | Codex skill | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`Commando`](https://github.com/AxolotlBucketLabs/Commando) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`CustomAlerts`](https://github.com/AxolotlBucketLabs/CustomAlerts) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain`, pupggers with `Maintain` |
+| [`DevTools`](https://github.com/AxolotlBucketLabs/DevTools) | Tool, Plugin | Plugin, CLI, GitHub Action, Reusable workflow | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`EconomyProviderAPI`](https://github.com/AxolotlBucketLabs/EconomyProviderAPI) | Library, Plugin | Virion, Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`FormAPI`](https://github.com/AxolotlBucketLabs/FormAPI) | Library, Plugin | Composer, Virion, Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`FormImagesFix`](https://github.com/AxolotlBucketLabs/FormImagesFix) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`libpmform`](https://github.com/AxolotlBucketLabs/libpmform) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`MultiWorld`](https://github.com/AxolotlBucketLabs/MultiWorld) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`NPC`](https://github.com/AxolotlBucketLabs/NPC) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`PersonaSkin`](https://github.com/AxolotlBucketLabs/PersonaSkin) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`pmforms`](https://github.com/AxolotlBucketLabs/pmforms) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`PureChat`](https://github.com/AxolotlBucketLabs/PureChat) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`PurePerms`](https://github.com/AxolotlBucketLabs/PurePerms) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`ResourcePackManager`](https://github.com/AxolotlBucketLabs/ResourcePackManager) | Library | Composer, Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`ScoreHud`](https://github.com/AxolotlBucketLabs/ScoreHud) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`SimpleEconomy`](https://github.com/AxolotlBucketLabs/SimpleEconomy) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`SimplePacketHandler`](https://github.com/AxolotlBucketLabs/SimplePacketHandler) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`SimpleSQL`](https://github.com/AxolotlBucketLabs/SimpleSQL) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`UI-API`](https://github.com/AxolotlBucketLabs/UI-API) | Library | Composer, Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`VanillaGenerator`](https://github.com/AxolotlBucketLabs/VanillaGenerator) | Library, Plugin | Composer, Virion, Plugin | NhanAZ with `Admin`, jeantkg with `Maintain` |
 
 ## Updating project assignments
 
-When adding a repository, add one entry to `projects.json` with a stable ID, repository URL, type, status, and assignments.
+When adding a repository, add one entry to `projects.json` with a stable ID, repository URL, roles, integration modes, status, and assignments. Update the human-readable project table in the same change.
 
 When changing a manager or repository permission, update the JSON registry and verify the corresponding GitHub settings in the same change.
 

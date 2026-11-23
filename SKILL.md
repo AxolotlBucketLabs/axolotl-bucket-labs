@@ -13,8 +13,8 @@ Use this skill for technical work on Axolotl-PM and PocketMine-MP projects, plus
 - If no push target is configured or the owner is unclear, resolve the target before adding organization guidance. Do not infer ownership from the local folder, access rights, or the task request.
 - For repositories outside AxolotlBucketLabs, use only the technical guidance relevant to the requested Axolotl-PM or PocketMine-MP work. Do not copy organization roles, permissions, Discord links, badges, or repository policy into an external project.
 - Treat the current repository's instructions, source, dependencies, tests, and workflow as authoritative. Use Axolotl-PM and PocketMine-MP guidance where it fits the target.
-- Identify a plugin by its `plugin.yml`, `PluginBase` entry point, commands, listeners, resources, or server lifecycle behavior.
-- Identify a reusable library or virion by its `virion.yml`, Composer package, public API, or consumer plugin that shades it.
+- Classify a project by its purpose and supported integration modes. A library is a reusable-code role. Composer and Virion are distinct consumption and packaging modes, while a plugin is an independently useful server component. A project may support more than one. Follow [project-model.md](references/project-model.md) instead of inferring the role from a single manifest.
+- Identify a plugin by its `plugin.yml`, `PluginBase` entry point, commands, listeners, resources, or server lifecycle behavior. An API exposed by an installed plugin does not automatically make that project a library.
 - Treat a PocketMine-MP core checkout as a separate code target from a plugin. Apply its core-specific guidance only to core source and tooling.
 
 ## Route to relevant guidance
@@ -22,6 +22,7 @@ Use this skill for technical work on Axolotl-PM and PocketMine-MP projects, plus
 Read only the references needed for the current task.
 
 - Read [project-discovery.md](references/project-discovery.md) before making assumptions about an unfamiliar repository or server version.
+- Read [project-model.md](references/project-model.md) when deciding whether a project is a library, virion, Composer package, plugin, or a combination.
 - Read [official-sources.md](references/official-sources.md) when verifying Axolotl-PM documentation, source, PHP support, API versions, or Bedrock protocol data.
 - Read [plugin-workflow.md](references/plugin-workflow.md) for plugin lifecycle, commands, events, configuration, resources, and permissions.
 - Read [virion-workflow.md](references/virion-workflow.md) for library APIs, `virion.yml`, shading, dependencies, and consumer integration.

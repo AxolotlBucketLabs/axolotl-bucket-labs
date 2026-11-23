@@ -2,7 +2,7 @@
 
 ## Boundary
 
-A virion is a reusable library, not a standalone server plugin. Keep server-specific lifecycle wiring in the consumer plugin unless the library's purpose is explicitly a server adapter.
+A virion is a PocketMine-family integration and packaging mode for reusable PHP code. It is not a project role, a Composer package, or a standalone server plugin. A repository may support Composer and Virion together, and may also provide a separate plugin when that plugin has independent server behavior. See [project-model.md](project-model.md).
 
 The library should expose a small, stable API. Hide packet formats, resource-pack internals, storage layout, cache coordination, and shading details behind that API.
 
@@ -29,6 +29,8 @@ Keep PHP namespace, directory layout, Composer autoload, `antigen`, and consumer
 
 ## Packaging and consumers
 
+Composer and Virion describe different contracts. Composer identifies a PHP package, its dependencies, and its autoload rules. `virion.yml` identifies the server-facing reusable package, its antigen, version, and API requirements. When both modes are supported, keep their namespace, source layout, version, and dependency declarations consistent. Do not count development-only Composer metadata as a documented consumer integration.
+
 Verify both development and production modes:
 
 - Verify folder-plugin development with a shared virion source.
@@ -37,7 +39,7 @@ Verify both development and production modes:
 - Verify that dependency versions resolve exactly as the build expects.
 - Verify multiple consumers, static runtime state, and resource-pack UUID behavior where relevant.
 
-Do not tell users to install a virion directly in `plugins/`. Provide a consumer example or a minimal integration snippet instead.
+Do not tell users to install a virion directly in `plugins/`. A virion PHAR belongs to the virion path or is included in a consumer plugin build. A plugin PHAR belongs in `plugins/`. If both manifests exist, document and verify the two outputs separately.
 
 ## README expectations
 

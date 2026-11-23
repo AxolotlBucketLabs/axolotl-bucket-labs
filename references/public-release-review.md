@@ -38,12 +38,13 @@ Read this reference only when the user asks to prepare a public release, submit 
 - Include a user-readable changelog for updates. Mention breaking changes, migrations, behavior changes, and important fixes rather than cosmetic repository edits.
 - Include an SPDX-compatible open-source license at the project root and check licenses for bundled dependencies and assets.
 
-## Virion/library publication
+## Library and integration publication
 
-- A server-facing reusable library should normally be distributed as a virion or through the target's supported library mechanism rather than as a fake standalone plugin.
-- A pure PHP library may be Composer-first or dual-distributed when it does not require server lifecycle integration.
-- State whether the artifact is a standalone plugin, a virion, a Composer package, or a consumer example.
-- Document the exact consumer build path, shading behavior, resource handling, and any limitation when multiple consumers run together.
+- Treat library as a project role. Treat Composer and Virion as separate ways to consume or package reusable code. A server-facing library commonly supports both when the project maintains both contracts.
+- Add a standalone plugin mode only when the project provides independently useful server behavior. Do not create a plugin wrapper just to distribute a library.
+- State which roles and integration modes the repository supports. A `composer.json` used for development does not by itself establish a public Composer integration.
+- Document Composer package identity and autoloading separately from Virion metadata, consumer shading, plugin installation, resources, and lifecycle behavior.
+- When a repository supports both plugin and virion modes, publish separate artifacts and describe each one accurately.
 
 ## Final release checklist
 

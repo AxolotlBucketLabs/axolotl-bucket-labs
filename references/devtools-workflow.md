@@ -31,7 +31,7 @@ The DevTools README documents these server commands:
     /devtools build [plugin|virion|both] <project> [--overwrite]
     /devtools extract <phar> [--format=folder|zip] [--type=auto|plugin|virion] [--overwrite]
 
-Use build both for a project that intentionally contains both plugin.yml and virion.yml. The resulting plugin and virion artifacts remain separate. A plugin is not silently converted into a virion, and a virion is not merged into another virion.
+Use build both only for a project that intentionally supports both `plugin.yml` and `virion.yml`. The resulting plugin and virion artifacts remain separate. Composer preparation can supply dependencies for a build, but it does not replace either manifest or turn one artifact into another. A plugin is not silently converted into a virion, and a virion is not merged into another virion. See [project-model.md](project-model.md) for the role and integration model.
 
 ## CI and reproducibility
 

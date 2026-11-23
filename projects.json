@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "organization": "AxolotlBucketLabs",
   "permissionLevels": [
     "admin",
@@ -51,7 +51,10 @@
       "id": "github",
       "repository": "AxolotlBucketLabs/.github",
       "url": "https://github.com/AxolotlBucketLabs/.github",
-      "type": "organization-config",
+      "roles": [
+        "organization-config"
+      ],
+      "integrationModes": [],
       "status": "active",
       "assignments": [
         {
@@ -70,7 +73,12 @@
       "id": "action-shellcheck",
       "repository": "AxolotlBucketLabs/action-shellcheck",
       "url": "https://github.com/AxolotlBucketLabs/action-shellcheck",
-      "type": "tool",
+      "roles": [
+        "tool"
+      ],
+      "integrationModes": [
+        "github-action"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -89,7 +97,12 @@
       "id": "arithmexp",
       "repository": "AxolotlBucketLabs/arithmexp",
       "url": "https://github.com/AxolotlBucketLabs/arithmexp",
-      "type": "virion",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -108,7 +121,13 @@
       "id": "await-generator",
       "repository": "AxolotlBucketLabs/await-generator",
       "url": "https://github.com/AxolotlBucketLabs/await-generator",
-      "type": "library",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "composer",
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -127,7 +146,12 @@
       "id": "axolotl-bucket-labs",
       "repository": "AxolotlBucketLabs/axolotl-bucket-labs",
       "url": "https://github.com/AxolotlBucketLabs/axolotl-bucket-labs",
-      "type": "organization-platform",
+      "roles": [
+        "organization-platform"
+      ],
+      "integrationModes": [
+        "codex-skill"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -146,7 +170,12 @@
       "id": "customalerts",
       "repository": "AxolotlBucketLabs/CustomAlerts",
       "url": "https://github.com/AxolotlBucketLabs/CustomAlerts",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -170,7 +199,16 @@
       "id": "devtools",
       "repository": "AxolotlBucketLabs/DevTools",
       "url": "https://github.com/AxolotlBucketLabs/DevTools",
-      "type": "tool",
+      "roles": [
+        "tool",
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin",
+        "cli",
+        "github-action",
+        "reusable-workflow"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -189,7 +227,14 @@
       "id": "economy-provider-api",
       "repository": "AxolotlBucketLabs/EconomyProviderAPI",
       "url": "https://github.com/AxolotlBucketLabs/EconomyProviderAPI",
-      "type": "virion",
+      "roles": [
+        "library",
+        "plugin"
+      ],
+      "integrationModes": [
+        "virion",
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -208,7 +253,15 @@
       "id": "formapi",
       "repository": "AxolotlBucketLabs/FormAPI",
       "url": "https://github.com/AxolotlBucketLabs/FormAPI",
-      "type": "library",
+      "roles": [
+        "library",
+        "plugin"
+      ],
+      "integrationModes": [
+        "composer",
+        "virion",
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -227,7 +280,12 @@
       "id": "formimagesfix",
       "repository": "AxolotlBucketLabs/FormImagesFix",
       "url": "https://github.com/AxolotlBucketLabs/FormImagesFix",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -246,7 +304,12 @@
       "id": "libpmform",
       "repository": "AxolotlBucketLabs/libpmform",
       "url": "https://github.com/AxolotlBucketLabs/libpmform",
-      "type": "virion",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -265,7 +328,12 @@
       "id": "multiworld",
       "repository": "AxolotlBucketLabs/MultiWorld",
       "url": "https://github.com/AxolotlBucketLabs/MultiWorld",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -284,7 +352,12 @@
       "id": "npc",
       "repository": "AxolotlBucketLabs/NPC",
       "url": "https://github.com/AxolotlBucketLabs/NPC",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -303,7 +376,12 @@
       "id": "personaskin",
       "repository": "AxolotlBucketLabs/PersonaSkin",
       "url": "https://github.com/AxolotlBucketLabs/PersonaSkin",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -322,7 +400,12 @@
       "id": "pmforms",
       "repository": "AxolotlBucketLabs/pmforms",
       "url": "https://github.com/AxolotlBucketLabs/pmforms",
-      "type": "library",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -341,7 +424,12 @@
       "id": "purechat",
       "repository": "AxolotlBucketLabs/PureChat",
       "url": "https://github.com/AxolotlBucketLabs/PureChat",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -360,7 +448,12 @@
       "id": "pureperms",
       "repository": "AxolotlBucketLabs/PurePerms",
       "url": "https://github.com/AxolotlBucketLabs/PurePerms",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -379,7 +472,12 @@
       "id": "scorehud",
       "repository": "AxolotlBucketLabs/ScoreHud",
       "url": "https://github.com/AxolotlBucketLabs/ScoreHud",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -398,7 +496,12 @@
       "id": "simpleeconomy",
       "repository": "AxolotlBucketLabs/SimpleEconomy",
       "url": "https://github.com/AxolotlBucketLabs/SimpleEconomy",
-      "type": "plugin",
+      "roles": [
+        "plugin"
+      ],
+      "integrationModes": [
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -417,7 +520,12 @@
       "id": "simplepackethandler",
       "repository": "AxolotlBucketLabs/SimplePacketHandler",
       "url": "https://github.com/AxolotlBucketLabs/SimplePacketHandler",
-      "type": "virion",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -436,7 +544,12 @@
       "id": "simplesql",
       "repository": "AxolotlBucketLabs/SimpleSQL",
       "url": "https://github.com/AxolotlBucketLabs/SimpleSQL",
-      "type": "virion",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -455,7 +568,13 @@
       "id": "ui-api",
       "repository": "AxolotlBucketLabs/UI-API",
       "url": "https://github.com/AxolotlBucketLabs/UI-API",
-      "type": "library",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "composer",
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -474,7 +593,15 @@
       "id": "vanillagenerator",
       "repository": "AxolotlBucketLabs/VanillaGenerator",
       "url": "https://github.com/AxolotlBucketLabs/VanillaGenerator",
-      "type": "plugin",
+      "roles": [
+        "library",
+        "plugin"
+      ],
+      "integrationModes": [
+        "composer",
+        "virion",
+        "plugin"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -493,7 +620,12 @@
       "id": "commando",
       "repository": "AxolotlBucketLabs/Commando",
       "url": "https://github.com/AxolotlBucketLabs/Commando",
-      "type": "virion",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
@@ -512,7 +644,13 @@
       "id": "resourcepackmanager",
       "repository": "AxolotlBucketLabs/ResourcePackManager",
       "url": "https://github.com/AxolotlBucketLabs/ResourcePackManager",
-      "type": "virion",
+      "roles": [
+        "library"
+      ],
+      "integrationModes": [
+        "composer",
+        "virion"
+      ],
       "status": "active",
       "assignments": [
         {
