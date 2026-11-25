@@ -53,7 +53,9 @@ These declarations record supported user-facing behavior. They do not list every
 
 ## Current project registry
 
-The organization currently has 25 active repositories in the registry.
+The organization currently has 26 active repositories in the registry.
+
+Project assignments may narrow the organization role defaults. The registry below records each project's declared access.
 
 | Project | Roles | Integration modes | Declared managers |
 | --- | --- | --- | --- |
@@ -62,6 +64,7 @@ The organization currently has 25 active repositories in the registry.
 | [`arithmexp`](https://github.com/AxolotlBucketLabs/arithmexp) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`await-generator`](https://github.com/AxolotlBucketLabs/await-generator) | Library | Composer, Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`axolotl-bucket-labs`](https://github.com/AxolotlBucketLabs/axolotl-bucket-labs) | Organization platform | Codex skill | NhanAZ with `Admin`, jeantkg with `Maintain` |
+| [`BedrockCatalog`](https://github.com/AxolotlBucketLabs/BedrockCatalog) | Tool | None | NhanAZ with `Admin` |
 | [`Commando`](https://github.com/AxolotlBucketLabs/Commando) | Library | Virion | NhanAZ with `Admin`, jeantkg with `Maintain` |
 | [`CustomAlerts`](https://github.com/AxolotlBucketLabs/CustomAlerts) | Plugin | Plugin | NhanAZ with `Admin`, jeantkg with `Maintain`, pupggers with `Maintain` |
 | [`DevTools`](https://github.com/AxolotlBucketLabs/DevTools) | Tool, Plugin | Plugin, CLI, GitHub Action, Reusable workflow | NhanAZ with `Admin`, jeantkg with `Maintain` |

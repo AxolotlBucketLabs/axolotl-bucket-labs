@@ -143,6 +143,23 @@
       ]
     },
     {
+      "id": "bedrock-catalog",
+      "repository": "AxolotlBucketLabs/BedrockCatalog",
+      "url": "https://github.com/AxolotlBucketLabs/BedrockCatalog",
+      "roles": [
+        "tool"
+      ],
+      "integrationModes": [],
+      "status": "active",
+      "assignments": [
+        {
+          "member": "NhanAZ",
+          "role": "lab-founder",
+          "repositoryPermission": "admin"
+        }
+      ]
+    },
+    {
       "id": "axolotl-bucket-labs",
       "repository": "AxolotlBucketLabs/axolotl-bucket-labs",
       "url": "https://github.com/AxolotlBucketLabs/axolotl-bucket-labs",
