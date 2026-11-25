@@ -57,6 +57,11 @@
       "actor_type": "User",
       "actor_id": 60387689,
       "bypass_mode": "always"
+    },
+    {
+      "actor_type": "Integration",
+      "actor_id": 5924410,
+      "bypass_mode": "always"
     }
   ]
 }

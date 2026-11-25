@@ -38,6 +38,8 @@ The `main-baseline` ruleset targets `refs/heads/main`. Its common policy include
 
 The only normal bypass actor is `NhanAZ`. A `Maintain` team member is not a bypass actor unless the user explicitly changes the live ruleset.
 
+A repository-scoped GitHub App may be added as an additional bypass actor for a user-approved automation use case. Record that exception in the repository's ruleset export and verify that the live installation is limited to the same repository.
+
 ## Repository identity rule
 
 Use organization links and badges only in repositories owned by `AxolotlBucketLabs`. For a repository outside the organization, preserve its own identity and community links even when the code targets Axolotl-PM.
