@@ -54,8 +54,8 @@
   ],
   "bypass_actors": [
     {
-      "actor_type": "RepositoryRole",
-      "actor_id": 5,
+      "actor_type": "User",
+      "actor_id": 60387689,
       "bypass_mode": "always"
     }
   ]
